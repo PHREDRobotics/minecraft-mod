@@ -20,8 +20,7 @@ public class PhredMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("fabric-phred-mod");
  
-    public static final Block MENTOR_JONATHAN_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
-
+    
 	@Override
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -29,9 +28,6 @@ public class PhredMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello PHRED!");
-		
-		Registry.register(Registries.BLOCK, new Identifier("phred", "mentor_jonathan_block"), MENTOR_JONATHAN_BLOCK);
-        Registry.register(Registries.ITEM, new Identifier("phred", "mentor_jonathan_block"), new BlockItem(MENTOR_JONATHAN_BLOCK, new FabricItemSettings()));
-  
+		PhredBlocks.register();	
 	}
 }
