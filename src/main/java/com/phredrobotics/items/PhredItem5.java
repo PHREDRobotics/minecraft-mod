@@ -17,7 +17,7 @@ public class PhredItem5 extends Item {
 public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
  
     // default white text
-    tooltip.add(Text.translatable("phred 5 item"));
+    tooltip.add(Text.translatable("lookin kinda sus there..."));
  
 }
 }

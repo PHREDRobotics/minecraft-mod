@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " AA",
+      " BA",
+      "B  "
+    ],
+    "key": {
+      "A": {
+        "item": "phred:phred_item_5"
+      },
+      "B": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "phred:phred_axe",
+      "count": 1
+    }
+  }

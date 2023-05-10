@@ -1,16 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-      "WR ",
-      "   ",
-      "   "
+      "AAA",
+      "ABA",
+      "ABA"
     ],
     "key": {
-      "W": {
-        "item": "minecraft:paper"
+      "A": {
+        "item": "minecraft:iron"
       },
-      "R": {
-        "item": "minecraft:blue_dye"
+      "B": {
+        "item": "minecraft:red_dye"
       }
     },
     "result": {
