@@ -1,3 +1,4 @@
+/*
 package com.phredrobotics;
 
 // import org.jetbrains.annotations.ApiStatus.OverrideOnly;
@@ -5,26 +6,24 @@ package com.phredrobotics;
 // import com.phredrobotics.PhredItems;
 // import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem.Type;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
 public class PhredArmorMaterial implements ArmorMaterial {
-    /* it just does not work
+    
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
     private static final int[] PROTECTION_VALUES = new int[] {4, 7, 9, 4};
 
-    @Override
     public int getDurability(EquipmentSlot slot) {
         return BASE_DURABILITY[slot.getEntitySlotId()] * 40;
     }
     
-    @Override
     public int getProtection(EquipmentSlot slot) {
         return PROTECTION_VALUES[slot.getEntitySlotId()];
     }
-    */
     @Override
     public int getEnchantability() {
         return 30;
@@ -67,4 +66,4 @@ public class PhredArmorMaterial implements ArmorMaterial {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getProtection'");
     }
-}
+} */
