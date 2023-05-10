@@ -11,6 +11,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 
 public class PhredArmorMaterial implements ArmorMaterial {
+    /* it just does not work
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
     private static final int[] PROTECTION_VALUES = new int[] {4, 7, 9, 4};
 
@@ -23,6 +24,7 @@ public class PhredArmorMaterial implements ArmorMaterial {
     public int getProtection(EquipmentSlot slot) {
         return PROTECTION_VALUES[slot.getEntitySlotId()];
     }
+    */
     @Override
     public int getEnchantability() {
         return 30;
@@ -52,5 +54,17 @@ public class PhredArmorMaterial implements ArmorMaterial {
     @Override
     public float getKnockbackResistance() {
         return 0.0F;
+    }
+
+    @Override
+    public int getDurability(Type type) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getDurability'");
+    }
+
+    @Override
+    public int getProtection(Type type) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getProtection'");
     }
 }
