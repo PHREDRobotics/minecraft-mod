@@ -10,11 +10,11 @@
         "item": "phred:phred_item_5"
       },
       "B": {
-        "item": "minecraft:stick"
+        "item": "minecraft:netherite_ingot"
       }
     },
     "result": {
-      "item": "phred:phred_axe",
+      "item": "phred:phred_sign",
       "count": 1
     }
   }

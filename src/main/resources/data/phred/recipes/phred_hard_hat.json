@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "AAA",
+      "ABA",
+      "CDC"
+    ],
+    "key": {
+      "A": {
+        "item": "phred:phred_item_5"
+      },
+      "B": {
+        "item": "minecraft:netherite_helmet"
+      },
+      "C":{
+        "item": "minecraft:yellow_dye"
+      },
+      "D": {
+        "item": "minecraft:redstone_lamp"
+      }
+    },
+    "result": {
+      "item": "phred:phred_hard_hat",
+      "count": 1
+    }
+  }

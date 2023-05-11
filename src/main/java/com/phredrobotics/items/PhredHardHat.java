@@ -30,7 +30,7 @@ public class PhredHardHat extends ArmorItem{
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
     (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
             .put(PhredArmorMaterials.PHREDHARDHAT,
-                    new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 1)).build();
+                    new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 0)).build();
 
 @Override
 public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
