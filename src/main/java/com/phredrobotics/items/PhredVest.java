@@ -17,20 +17,20 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
-public class PhredHardHat extends ArmorItem{
-    public PhredHardHat(ArmorMaterial material, Type type, Settings settings) {
+public class PhredVest extends ArmorItem{
+    public PhredVest(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
     }
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
  
         // default white text
-        tooltip.add(Text.translatable("Everyone knows hard hats prevent death!"));
+        tooltip.add(Text.translatable("Makes you more visible!"));
      
     }
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
     (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-            .put(PhredArmorMaterials.PHREDHARDHAT,
-                    new StatusEffectInstance(StatusEffects.RESISTANCE, 20, 1)).build();
+            .put(PhredArmorMaterials.PHRED,
+                    new StatusEffectInstance(StatusEffects.GLOWING, 100, 0)).build();
 
 @Override
 public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
@@ -38,7 +38,7 @@ if(!world.isClient()) {
     if(entity instanceof PlayerEntity) {
         PlayerEntity player = (PlayerEntity)entity;
 
-        if(hasHelmetOn(player)) {
+        if(hasChestplateOn(player)) {
             evaluateArmorEffects(player);
         }
     }
@@ -71,15 +71,15 @@ if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
 }
 }
 
-private boolean hasHelmetOn(PlayerEntity player) {
-ItemStack helmet = player.getInventory().getArmorStack(3);
+private boolean hasChestplateOn(PlayerEntity player) {
+ItemStack chestplate = player.getInventory().getArmorStack(2);
 
-return !helmet.isEmpty();
+return !chestplate.isEmpty();
 }
 
 private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player) {
-ArmorItem helmet = ((ArmorItem)player.getInventory().getArmorStack(3).getItem());
+ArmorItem chestplate = ((ArmorItem)player.getInventory().getArmorStack(2).getItem());
 
-return helmet.getMaterial() == material;
+return chestplate.getMaterial() == material;
 }
 }

@@ -1,18 +1,17 @@
 package com.phredrobotics;
 
-import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class PhredToolMaterial implements ToolMaterial {
-    public static final PhredToolMaterial INSTANCE = new PhredToolMaterial();
+public class PhredToolMaterials implements ToolMaterial {
+    public static final PhredToolMaterials SIGN = new PhredToolMaterials();
     @Override
     public int getDurability() {
         return 500;
     }
     @Override
     public float getMiningSpeedMultiplier() {
-        return 10.0F;
+        return 0.0F;
     }
     @Override
     public float getAttackDamage() {
@@ -20,7 +19,7 @@ public class PhredToolMaterial implements ToolMaterial {
     }
     @Override
     public int getMiningLevel() {
-        return 3;
+        return 0;
     }
     @Override
     public int getEnchantability() {
@@ -28,6 +27,6 @@ public class PhredToolMaterial implements ToolMaterial {
     }
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.POTATO);
+        return Ingredient.ofItems(PhredItems.PHRED_ITEM_5);
     }
 }

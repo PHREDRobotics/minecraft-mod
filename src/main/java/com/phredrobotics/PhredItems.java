@@ -1,9 +1,6 @@
 package com.phredrobotics;
 
-import com.phredrobotics.items.PhredArmorItem;
-import com.phredrobotics.items.PhredHardHat;
-import com.phredrobotics.items.PhredSign;
-import com.phredrobotics.items.PhredItem5;
+import com.phredrobotics.items.*;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -18,10 +15,10 @@ public class PhredItems {
 
     public static final Item PHRED_ITEM_5 = new PhredItem5(new FabricItemSettings().maxCount(5));
 
-    public static ToolItem PHRED_SIGN = new PhredSign(PhredToolMaterial.INSTANCE, 0, -3.2F, new Item.Settings());
+    public static ToolItem PHRED_SIGN = new PhredSign(PhredToolMaterials.SIGN, 0, -3.2F, new Item.Settings());
 ;
-    public static final Item PHRED_HARD_HAT = new PhredHardHat(PhredArmorMaterials.PHRED, ArmorItem.Type.HELMET, new Item.Settings());
-    public static final Item PHRED_CHESTPLATE = new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.CHESTPLATE, new Item.Settings());
+    public static final Item PHRED_HARD_HAT = new PhredHardHat(PhredArmorMaterials.PHREDHARDHAT, ArmorItem.Type.HELMET, new Item.Settings());
+    public static final Item PHRED_VEST = new PhredVest(PhredArmorMaterials.PHRED, ArmorItem.Type.CHESTPLATE, new Item.Settings());
     public static final Item PHRED_LEGGINGS = new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.LEGGINGS, new Item.Settings());
     public static final Item PHRED_BOOTS = new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.BOOTS, new Item.Settings());
     
@@ -36,7 +33,7 @@ public class PhredItems {
         Registry.register(Registries.ITEM, new Identifier("phred", "phred_sign"), PHRED_SIGN);
         Registry.register(Registries.ITEM, new Identifier("phred", "phred_item_5"), PHRED_ITEM_5);
         Registry.register(Registries.ITEM, new Identifier("phred", "phred_hard_hat"), PHRED_HARD_HAT);
-        Registry.register(Registries.ITEM, new Identifier("phred", "phred_chestplate"), PHRED_CHESTPLATE);
+        Registry.register(Registries.ITEM, new Identifier("phred", "phred_vest"), PHRED_VEST);
         Registry.register(Registries.ITEM, new Identifier("phred", "phred_leggings"), PHRED_LEGGINGS);
         Registry.register(Registries.ITEM, new Identifier("phred", "phred_boots"), PHRED_BOOTS);
      
@@ -44,7 +41,7 @@ public class PhredItems {
             content.add(PHRED_ITEM_5);
             content.add(PHRED_SIGN);
             content.add(PHRED_HARD_HAT);
-            content.add(PHRED_CHESTPLATE);
+            content.add(PHRED_VEST);
             content.add(PHRED_LEGGINGS);
             content.add(PHRED_BOOTS);
         });

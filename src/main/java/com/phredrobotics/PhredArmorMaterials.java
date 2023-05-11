@@ -13,14 +13,23 @@ import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.Util;
 
 public enum PhredArmorMaterials implements ArmorMaterial {
-    PHRED("phred", 40, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
-        map.put(ArmorItem.Type.BOOTS, 3);
-        map.put(ArmorItem.Type.LEGGINGS, 6);
-        map.put(ArmorItem.Type.CHESTPLATE, 8);
+    PHRED("phred", 25, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 0);
+        map.put(ArmorItem.Type.LEGGINGS, 0);
+        map.put(ArmorItem.Type.CHESTPLATE, 5);
+        map.put(ArmorItem.Type.HELMET, 0);
+    }), 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.0F, 0.0F, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{PhredItems.PHRED_ITEM_5});
+    }),
+    PHREDHARDHAT("phredhardhat", 40, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 0);
+        map.put(ArmorItem.Type.LEGGINGS, 0);
+        map.put(ArmorItem.Type.CHESTPLATE, 0);
         map.put(ArmorItem.Type.HELMET, 10);
     }), 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 10.0F, 0.2F, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{Items.NETHERITE_INGOT});
+        return Ingredient.ofItems(new ItemConvertible[]{PhredItems.PHRED_ITEM_5});
     });
+
 
     public static final StringIdentifiable.Codec<ArmorMaterials> CODEC = StringIdentifiable.createCodec(ArmorMaterials::values);
     private static final EnumMap<ArmorItem.Type, Integer> BASE_DURABILITY = Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
