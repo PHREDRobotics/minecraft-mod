@@ -13,12 +13,12 @@ import net.minecraft.util.StringIdentifiable;
 import net.minecraft.util.Util;
 
 public enum PhredArmorMaterials implements ArmorMaterial {
-    PHRED("phred", 25, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+    PHRED("phred", 40, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
         map.put(ArmorItem.Type.BOOTS, 3);
         map.put(ArmorItem.Type.LEGGINGS, 6);
         map.put(ArmorItem.Type.CHESTPLATE, 8);
-        map.put(ArmorItem.Type.HELMET, 3);
-    }), 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2.0F, 0.1F, () -> {
+        map.put(ArmorItem.Type.HELMET, 10);
+    }), 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 10.0F, 0.2F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{Items.NETHERITE_INGOT});
     });
 
@@ -27,7 +27,7 @@ public enum PhredArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.BOOTS, 13);
         map.put(ArmorItem.Type.LEGGINGS, 15);
         map.put(ArmorItem.Type.CHESTPLATE, 16);
-        map.put(ArmorItem.Type.HELMET, 11);
+        map.put(ArmorItem.Type.HELMET, 20);
     });
     private final String name;
     private final int durabilityMultiplier;
