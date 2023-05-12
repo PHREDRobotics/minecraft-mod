@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "phred:item/phred_vest"
+    "layer0": "phred:item/googly_eyes"
   }
 }

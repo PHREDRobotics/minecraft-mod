@@ -14,6 +14,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
@@ -73,8 +74,7 @@ if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
 
 private boolean hasChestplateOn(PlayerEntity player) {
 ItemStack chestplate = player.getInventory().getArmorStack(2);
-
-return !chestplate.isEmpty();
+return !chestplate.isEmpty() && !chestplate.isOf(Items.ELYTRA);
 }
 
 private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player) {
