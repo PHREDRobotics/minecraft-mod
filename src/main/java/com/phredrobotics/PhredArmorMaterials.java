@@ -28,6 +28,14 @@ public enum PhredArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.HELMET, 10);
     }), 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 10.0F, 0.2F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{PhredItems.PHRED_ITEM_5});
+    }),
+    PHREDHARDHATUPGRADED("phredhardhatupgraded", 80, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 0);
+        map.put(ArmorItem.Type.LEGGINGS, 0);
+        map.put(ArmorItem.Type.CHESTPLATE, 0);
+        map.put(ArmorItem.Type.HELMET, 12);
+    }), 30, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 10.0F, 0.2F, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{PhredItems.PHRED_ITEM_5});
     });
 
 

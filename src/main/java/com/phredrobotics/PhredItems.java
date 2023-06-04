@@ -24,6 +24,8 @@ public class PhredItems {
 ;
     public static final Item PHRED_HARD_HAT = registerItem("phred_hard_hat",
     new PhredHardHat(PhredArmorMaterials.PHREDHARDHAT, ArmorItem.Type.HELMET, new Item.Settings()));
+    public static final Item PHRED_HARD_HAT_UPGRADED = registerItem("phred_hard_hat_upgraded",
+    new PhredHardHat(PhredArmorMaterials.PHREDHARDHATUPGRADED, ArmorItem.Type.HELMET, new Item.Settings()));
     public static final Item PHRED_VEST = registerItem("phred_vest", 
     new PhredVest(PhredArmorMaterials.PHRED, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
     public static final Item PHRED_LEGGINGS = registerItem("phred_leggings", 
@@ -32,7 +34,6 @@ public class PhredItems {
     new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.BOOTS, new Item.Settings()));
     
     private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
-
     .icon(() -> new ItemStack(PHRED_ITEM_5))
     .displayName(Text.translatable("Phred"))
     .build();
@@ -43,6 +44,7 @@ public class PhredItems {
 
     public static void addItemsToItemGroup(){
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HARD_HAT);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HARD_HAT_UPGRADED);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_VEST);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_LEGGINGS);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_BOOTS);
