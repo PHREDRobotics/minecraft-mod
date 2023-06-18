@@ -17,6 +17,6 @@ public class PhredEntityRenderer extends MobEntityRenderer<PhredEntity, PhredEnt
  
     @Override
     public Identifier getTexture(PhredEntity entity) {
-        return new Identifier("phred", "textures/entity/phred/phred2.png");
+        return new Identifier("phred", "textures/entity/phred/phred2023.png");
     }
 }

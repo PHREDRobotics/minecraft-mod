@@ -23,7 +23,7 @@ public class EntityTestingClient implements ClientModInitializer {
          * Entity Renderers can also manipulate the model before it renders based on entity context (EndermanEntityRenderer#render).
          */
         // In 1.17, use EntityRendererRegistry.register (seen below) instead of EntityRendererRegistry.INSTANCE.register (seen above)
-        EntityRendererRegistry.register(PhredEntity.CUBE, (context) -> {
+        EntityRendererRegistry.register(PhredEntity.PHRED, (context) -> {
             return new PhredEntityRenderer(context);
         });
  

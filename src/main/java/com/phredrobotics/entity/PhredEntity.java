@@ -24,14 +24,14 @@ public class PhredEntity extends PathAwareEntity {
         super(entityType, world);
     }
 
-    public static final EntityType<PhredEntity> CUBE = Registry.register(
+    public static final EntityType<PhredEntity> PHRED = Registry.register(
             Registries.ENTITY_TYPE,
             new Identifier("phred", "phred"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PhredEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
     );
     public static void register(){
 
-        FabricDefaultAttributeRegistry.register(CUBE, PhredEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(PHRED, PhredEntity.createMobAttributes());
     }
 
 
