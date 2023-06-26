@@ -1,6 +1,8 @@
 package com.phredrobotics;
 
 import com.phredrobotics.items.*;
+import com.phredrobotics.blocks.*;
+import com.phredrobotics.PhredBlocks;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "phred:block/alblock"},
+    "facing=east":  { "model": "phred:block/alblock", "y":  90},
+    "facing=south": { "model": "phred:block/alblock", "y": 180},
+    "facing=west":  { "model": "phred:block/alblock", "y": 270}
+  }
+}
