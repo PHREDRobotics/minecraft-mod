@@ -1,5 +1,6 @@
 package com.phredrobotics;
 
+import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.*;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -20,7 +21,10 @@ public class PhredItems {
     new PhredSign(PhredToolMaterials.SIGN, 0, -3.2F, new Item.Settings()));
 
     public static final Item PHRED_HAT_UPGRADE = registerItem("googly_eyes", 
-    new Item(new FabricItemSettings().maxCount(1)))
+    new Item(new FabricItemSettings().maxCount(1)));
+
+    public static final Item PHREDBOT_SPAWN_EGG = registerItem("phredbot_spawn_egg",
+    new SpawnEggItem(PhredEntity.PHRED, 0x000000, 0xfbcc28, new FabricItemSettings()));
 ;
     public static final Item PHRED_HARD_HAT = registerItem("phred_hard_hat",
     new PhredHardHat(PhredArmorMaterials.PHREDHARDHAT, ArmorItem.Type.HELMET, new Item.Settings()));
@@ -51,6 +55,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ITEM_5);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_SIGN);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HAT_UPGRADE);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_SPAWN_EGG);
     }
 
     private static Item registerItem(String name, Item item) {
