@@ -21,5 +21,6 @@ public class PhredMod implements ModInitializer {
 		LOGGER.info("Hello PHRED!");
 		PhredBlocks.register();	
 		PhredItems.register();
+		PhredSounds.register();
 	}
 }
