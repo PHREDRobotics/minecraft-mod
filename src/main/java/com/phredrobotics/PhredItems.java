@@ -15,6 +15,9 @@ import net.minecraft.util.Identifier;
 
 public class PhredItems {
 
+    public static final Item AL_RAW = registerItem("al_raw", 
+    new Item(new FabricItemSettings()));
+
     public static final Item PHRED_ITEM_5 = registerItem("phred_item_5", 
     new PhredItem5(new FabricItemSettings().maxCount(5)));
 
@@ -35,7 +38,7 @@ public class PhredItems {
     public static final Item PHRED_BOOTS = registerItem("phred_boots", 
     new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.BOOTS, new Item.Settings()));
     
-    private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
+    public static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
     .displayName(Text.translatable("Phred"))
     .build();
@@ -53,6 +56,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ITEM_5);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_SIGN);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HAT_UPGRADE);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, AL_RAW);
     }
 
     private static Item registerItem(String name, Item item) {

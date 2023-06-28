@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:block",
+    "pools": [
+      {
+        "rolls": 2,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "phred:mentor_jonathan_block"
+          }
+        ]
+      }
+    ]
+  }
+  

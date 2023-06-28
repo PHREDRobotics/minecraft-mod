@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "phred:stone_alore",
+    "phred:deepslate_alore",
+    "phred:alblock",
+    "phred:raw_alblock"
+  ]
+}
