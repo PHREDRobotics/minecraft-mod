@@ -8,6 +8,7 @@ import com.phredrobotics.PhredSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.Material;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.data.client.VariantSettings.Rotation;
@@ -32,9 +33,13 @@ public PhredSign(ToolMaterial material, int attackDamage, float attackSpeed, Set
     public ActionResult useOnBlock(ItemUsageContext context) {
         
         World world = context.getWorld();
-        BlockPos pos = context.getBlockPos().add(0, 1, 0);
+        BlockPos pos = context.getBlockPos();
+        boolean materialIsReplaceable = world.getBlockState(pos).getMaterial().isReplaceable();
+        if(!materialIsReplaceable) {
+            pos.add(0, 1, 0);
+        }
         Block block = world.getBlockState(pos).getBlock();
-        if (context.getSide() == Direction.UP && block == Blocks.AIR){
+        if ((context.getSide() == Direction.UP && block == Blocks.AIR) || materialIsReplaceable){
             if (!world.isClient()) {
                 // Update block + item
                 world.setBlockState(pos, PhredBlocks.PHRED_SIGN_BLOCK.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getHorizontalPlayerFacing().getOpposite()));

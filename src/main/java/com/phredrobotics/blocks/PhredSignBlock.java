@@ -25,25 +25,13 @@ public class PhredSignBlock extends HorizontalFacingBlock {
         super(settings);
     }
 
-    private static final VoxelShape SHAPE_N = VoxelShapes.combineAndSimplify(
-        Block.createCuboidShape(7, 0, 7, 9, 32, 9), 
-        Block.createCuboidShape(-2, 19, 6, 18, 32, 7), 
-        BooleanBiFunction.OR);
+    private static final VoxelShape SHAPE_N = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
 
-    private static final VoxelShape SHAPE_E = VoxelShapes.combineAndSimplify(
-        Block.createCuboidShape(7, 0, 7, 9, 32, 9), 
-        Block.createCuboidShape(9, 19, -2, 10, 32, 18), 
-        BooleanBiFunction.OR);
+    private static final VoxelShape SHAPE_E = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
 
-    private static final VoxelShape SHAPE_S = VoxelShapes.combineAndSimplify(
-        Block.createCuboidShape(7, 0, 7, 9, 32, 9), 
-        Block.createCuboidShape(-2, 19, 9, 18, 32, 10), 
-        BooleanBiFunction.OR);
+    private static final VoxelShape SHAPE_S = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
 
-    private static final VoxelShape SHAPE_W = VoxelShapes.combineAndSimplify(
-        Block.createCuboidShape(7, 0, 7, 9, 32, 9), 
-        Block.createCuboidShape(6, 19, -2, 7, 32, 18), 
-        BooleanBiFunction.OR);
+    private static final VoxelShape SHAPE_W = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
