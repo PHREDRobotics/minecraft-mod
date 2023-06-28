@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class PhredBlocks {
     public static final Block MENTOR_JONATHAN_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
-    public static final Block Nate_Block = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
+    public static final Block NATE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL).strength(4.0f));
 
     public static void register(){
         
@@ -19,6 +19,6 @@ public class PhredBlocks {
         Registry.register(Registries.ITEM, new Identifier("phred", "mentor_jonathan_block"), new BlockItem(MENTOR_JONATHAN_BLOCK, new FabricItemSettings()));
 
         Registry.register(Registries.BLOCK, new Identifier("phred", "nate_block"), NATE_BLOCK);
-        Registry.register(Registries.ITEM, new Identifier("phred", "nate_block"), new BlockItem(Nate_BLOCK, new FabricItemSettings()));
+        Registry.register(Registries.ITEM, new Identifier("phred", "nate_block"), new BlockItem(NATE_BLOCK, new FabricItemSettings()));
     }
 }
