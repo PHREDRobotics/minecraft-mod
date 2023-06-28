@@ -1,0 +1,8 @@
+{
+    "parent": "phred:block/rotatable",
+    "textures": {
+      "bottom": "phred:block/alblock",
+      "top": "phred:block/alblock",
+      "side": "phred:block/alblock"
+    }
+  }

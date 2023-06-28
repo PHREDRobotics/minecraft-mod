@@ -1,7 +1,11 @@
 {
-    "replace": false,
-    "values": [
+  "replace": false,
+  "values": [
+    "phred:stone_alore",
+    "phred:alblock",
+    "phred:deepslate_alore",
+    "phred:raw_alblock",
+    "phred:mentor_jonathan_block"
         "phred:phred_sign_block"
-  
     ]
   }
