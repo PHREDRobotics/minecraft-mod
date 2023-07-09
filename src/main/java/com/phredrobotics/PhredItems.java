@@ -1,7 +1,7 @@
 package com.phredrobotics;
 
 import com.phredrobotics.items.PhredArmorItem;
-import com.phredrobotics.items.PhredElectricalBoard;
+//import com.phredrobotics.items.PhredElectricalBoard;
 import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredSign;
@@ -42,7 +42,7 @@ public class PhredItems {
     public static final Item PHRED_BOOTS = registerItem("phred_boots", 
     new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.BOOTS, new Item.Settings()));
       public static final Item PHRED_WIRE = registerItem("phred_wire", new PhredWire(new Item.Settings()));
-      public static final Item PHRED_ELECTRICAL_BOARD = registerItem("phred_electrical_board", new PhredElectricalBoard(new Item.Settings()));
+  //    public static final Item PHRED_ELECTRICAL_BOARD = registerItem("phred_electrical_board", new PhredElectricalBoard(new Item.Settings()));
 
     
     private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
@@ -54,9 +54,9 @@ public class PhredItems {
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
 
-    private static Item registerItem(String name, PhredElectricalBoard phredElectricalBoard) {
-        return null;
-    }
+   // private static Item registerItem(String name, PhredElectricalBoard phredElectricalBoard) {
+     //   return null;
+    //}
 
     public static void addItemsToItemGroup(){
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HARD_HAT);
@@ -68,7 +68,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_SIGN);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HAT_UPGRADE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_WIRE);
-        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
+     //   addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
     }
 
     private static Item registerItem(String name, Item item) {
