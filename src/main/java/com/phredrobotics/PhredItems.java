@@ -41,6 +41,8 @@ public class PhredItems {
     new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.LEGGINGS, new Item.Settings()));
     public static final Item PHRED_BOOTS = registerItem("phred_boots", 
     new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.BOOTS, new Item.Settings()));
+    public static final Item PHRED_CONE_HAT = registerItem("phred_cone_hat",
+    new PhredConeHat(PhredArmorMaterials.PHRED, ArmorItem.Type.HELMET, new Item.Settings()));
     
     public static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
@@ -57,6 +59,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_VEST);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_LEGGINGS);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_BOOTS);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE_HAT);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ITEM_5);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_SIGN);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HAT_UPGRADE);

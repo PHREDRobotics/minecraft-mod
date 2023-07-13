@@ -6,12 +6,13 @@
     "item.phred.phred_vest": "Phred Vest™",
     "item.phred.phred_leggings": "Phred Leggings WIP",
     "item.phred.phred_boots": "Phred Boots WIP",
+    "item.phred.phred_cone_hat": "Phred Cone Hat",
     "item.phred.googly_eyes": "Googly Eyes",
     "item.phred.al_raw": "Raw Aluminium",
     "block.phred.alblock": "Block of Aluminium",
     "block.phred.raw_alblock": "Block of Raw Aluminium",
     "block.phred.stone_alore": "Aluminium Ore",
     "block.phred.deepslate_alore": "Deepslate Aluminium Ore",
-    "block.phred.mentor_jonathan_block": "Best Block of the Century"
+    "block.phred.mentor_jonathan_block": "Best Block of the Century",
     "item.phred.phredbot_spawn_egg": "PhredBot Spawn Egg"
 }
