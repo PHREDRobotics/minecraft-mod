@@ -60,10 +60,6 @@ public class PhredItems {
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
 
-   // private static Item registerItem(String name, PhredElectricalBoard phredElectricalBoard) {
-     //   return null;
-    //}
-
     public static void addItemsToItemGroup(){
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HARD_HAT);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HARD_HAT_UPGRADED);
