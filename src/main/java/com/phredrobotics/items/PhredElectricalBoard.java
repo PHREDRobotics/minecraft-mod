@@ -1,4 +1,4 @@
-/*package com.phredrobotics.items;
+package com.phredrobotics.items;
 
 import net.minecraft.item.Item;
 
@@ -9,4 +9,4 @@ public class PhredElectricalBoard extends Item{
     super(settings);
     }
 }
- */
+ 

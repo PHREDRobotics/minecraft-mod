@@ -1,17 +1,17 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-      "A  ",
       "AAA",
+      "A A",
       "AAA"
     ],
     "key": {
       "A": {
-        "item": "minecraft:Block of Aluminum"
+        "item": "minecraft:copper_block"
       }
     },
     "result": {
-      "item": "phred:robot_frame"
-      
+      "item": "phred:phred_wire",
+      "count": 2
     }
   }
