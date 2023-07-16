@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WGW",
+    "GWG",
+    "WGW"
+  ],
+  "key": {
+    "W": {
+      "item": "phred:phred_wire"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "phred:phred_electrical_board"
+  }
+}

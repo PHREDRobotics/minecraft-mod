@@ -21,6 +21,5 @@ public class PhredBlocks {
 		Registry.register(Registries.BLOCK, new Identifier("phred", "mentor_jonathan_block"), MENTOR_JONATHAN_BLOCK);
         Registry.register(Registries.ITEM, new Identifier("phred", "mentor_jonathan_block"), new BlockItem(MENTOR_JONATHAN_BLOCK, new FabricItemSettings()));
         Registry.register(Registries.BLOCK, new Identifier("phred", "phred_sign_block"), PHRED_SIGN_BLOCK);
-        
     }
 }
