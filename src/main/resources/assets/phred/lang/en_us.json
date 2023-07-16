@@ -9,5 +9,9 @@
     "item.phred.googly_eyes": "Googly Eyes",
     "item.phred.phred_wire": "Phred Wire",
     "item.phred.phred_electrical_board": "Phred Electrical Board",
+<<<<<<< HEAD
     "item.phred.phred_robot_frame": "Phred Robot Frame"
+=======
+    "item.phred.phredbot_spawn_egg": "PhredBot Spawn Egg"
+>>>>>>> main
 }
