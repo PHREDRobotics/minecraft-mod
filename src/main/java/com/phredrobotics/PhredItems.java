@@ -5,6 +5,7 @@ import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredVest;
+import com.phredrobotics.entity.PhredEntity;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -13,6 +14,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -27,8 +29,11 @@ public class PhredItems {
     new PhredSign(PhredToolMaterials.SIGN, 0, -3.2F, new Item.Settings()));
 
     public static final Item PHRED_HAT_UPGRADE = registerItem("googly_eyes", 
-    new Item(new FabricItemSettings().maxCount(1)))
-;
+    new Item(new FabricItemSettings().maxCount(1)));
+
+    public static final Item PHREDBOT_SPAWN_EGG = registerItem("phredbot_spawn_egg",
+    new SpawnEggItem(PhredEntity.PHRED, 0x000000, 0xfbcc28, new FabricItemSettings()));
+
     public static final Item PHRED_HARD_HAT = registerItem("phred_hard_hat",
     new PhredHardHat(PhredArmorMaterials.PHREDHARDHAT, ArmorItem.Type.HELMET, new Item.Settings()));
 
@@ -71,6 +76,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HAT_UPGRADE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_WIRE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_SPAWN_EGG);
     }
 
     private static Item registerItem(String name, Item item) {
