@@ -24,5 +24,6 @@ public class PhredMod implements ModInitializer {
 		PhredBlocks.register();	
 		PhredItems.register();
 		PhredEntity.register();
+		PhredSounds.register();
 	}
 }
