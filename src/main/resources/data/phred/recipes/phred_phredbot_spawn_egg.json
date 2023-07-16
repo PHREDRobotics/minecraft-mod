@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "phred:phred_electrical_board"
+      },
+      {
+        "item": "phred:phred_robot_frame"
+      },
+      {
+        "item":  "minecraft:yellow_dye"
+      },
+      {
+        "item":  "minecraft:yellow_dye"
+      },
+      {
+        "item":  "minecraft:yellow_dye"
+      }
+    ],
+    "result": {
+      "item": "phred:phredbot_spawn_egg"
+      
+    }
+  }
