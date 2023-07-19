@@ -1,11 +1,14 @@
 package com.phredrobotics;
 
 import com.phredrobotics.items.PhredArmorItem;
+import com.phredrobotics.items.PhredElectricalBoard;
 import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
+import com.phredrobotics.items.PhredRobotFrame;
 import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredVest;
 import com.phredrobotics.entity.PhredEntity;
+import com.phredrobotics.items.PhredWire;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -50,10 +53,13 @@ public class PhredItems {
     new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.BOOTS, new Item.Settings()));
     
       public static final Item PHRED_WIRE = registerItem("phred_wire", 
-      new Item(new FabricItemSettings()));
+      new PhredWire(new FabricItemSettings()));
 
       public static final Item PHRED_ELECTRICAL_BOARD = registerItem("phred_electrical_board", 
-      new Item(new FabricItemSettings()));
+      new PhredElectricalBoard(new FabricItemSettings()));
+
+        public static final Item PHRED_ROBOT_FRAME = registerItem("phred_robot_frame", 
+      new PhredRobotFrame(new FabricItemSettings()));
 
     
     private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
@@ -77,6 +83,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_WIRE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_SPAWN_EGG);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ROBOT_FRAME);
     }
 
     private static Item registerItem(String name, Item item) {
