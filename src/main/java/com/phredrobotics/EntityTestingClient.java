@@ -26,6 +26,9 @@ public class EntityTestingClient implements ClientModInitializer {
         EntityRendererRegistry.register(PhredEntity.PHRED, (context) -> {
             return new PhredEntityRenderer(context);
         });
+        EntityRendererRegistry.register(PhredEntity.PHRED, (context) -> {
+            return new PhredEntityRenderer(context);
+        });
  
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, PhredEntityModel::getTexturedModelData);
     }
