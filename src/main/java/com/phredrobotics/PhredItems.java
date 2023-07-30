@@ -9,6 +9,7 @@ import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredVest;
 import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.PhredWire;
+import com.phredrobotics.items.PhredConeHat;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
