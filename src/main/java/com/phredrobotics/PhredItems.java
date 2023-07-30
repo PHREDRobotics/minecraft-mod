@@ -36,7 +36,9 @@ public class PhredItems {
 
     public static final Item PHREDBOT_SPAWN_EGG = registerItem("phredbot_spawn_egg",
     new SpawnEggItem(PhredEntity.PHRED, 0x000000, 0xfbcc28, new FabricItemSettings()));
-
+    public static final Item PHREDBOT_ITEM = registerItem("phredbot_item",
+    new SpawnEggItem(PhredEntity.PHRED, 0x00FFFFFF, 0x00FFFFFF, new FabricItemSettings().maxCount(1)));
+;
     public static final Item PHRED_HARD_HAT = registerItem("phred_hard_hat",
     new PhredHardHat(PhredArmorMaterials.PHREDHARDHAT, ArmorItem.Type.HELMET, new Item.Settings()));
 
@@ -83,7 +85,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_WIRE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_SPAWN_EGG);
-        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ROBOT_FRAME);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_ITEM);
     }
 
     private static Item registerItem(String name, Item item) {
