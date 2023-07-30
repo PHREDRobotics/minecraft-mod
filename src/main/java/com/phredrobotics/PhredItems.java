@@ -85,6 +85,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_WIRE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_SPAWN_EGG);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_ITEM);
     }
 
     private static Item registerItem(String name, Item item) {
