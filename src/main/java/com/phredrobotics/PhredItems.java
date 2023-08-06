@@ -9,6 +9,7 @@ import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredVest;
 import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.PhredWire;
+import com.phredrobotics.items.PhredConeHat;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -53,6 +54,8 @@ public class PhredItems {
 
     public static final Item PHRED_BOOTS = registerItem("phred_boots", 
     new PhredArmorItem(PhredArmorMaterials.PHRED, ArmorItem.Type.BOOTS, new Item.Settings()));
+    public static final Item PHRED_CONE_HAT = registerItem("phred_cone_hat",
+    new PhredConeHat(PhredArmorMaterials.PHRED, ArmorItem.Type.HELMET, new Item.Settings()));
     
       public static final Item PHRED_WIRE = registerItem("phred_wire", 
       new PhredWire(new FabricItemSettings()));
@@ -79,6 +82,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_VEST);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_LEGGINGS);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_BOOTS);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE_HAT);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ITEM_5);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_SIGN);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HAT_UPGRADE);
