@@ -29,9 +29,6 @@ public class PhredItems {
     public static final Item PHRED_ITEM_5 = registerItem("phred_item_5", 
     new PhredItem5(new FabricItemSettings().maxCount(5)));
 
-    public static final Item PHRED_SIGN = registerItem("phred_sign", 
-    new PhredSign(PhredToolMaterials.SIGN, 0, -3.2F, new Item.Settings()));
-
     public static final Item PHRED_HAT_UPGRADE = registerItem("googly_eyes", 
     new Item(new FabricItemSettings().maxCount(1)));
 
@@ -67,7 +64,7 @@ public class PhredItems {
       new PhredRobotFrame(new FabricItemSettings()));
 
     
-    private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
+    static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
     .displayName(Text.translatable("Phred"))
     .build();
@@ -84,7 +81,6 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_BOOTS);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE_HAT);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ITEM_5);
-        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_SIGN);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HAT_UPGRADE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_WIRE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
