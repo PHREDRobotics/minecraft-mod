@@ -1,13 +1,14 @@
 package com.phredrobotics;
 
+import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.PhredArmorItem;
+import com.phredrobotics.items.PhredCone;
 import com.phredrobotics.items.PhredElectricalBoard;
 import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredRobotFrame;
 import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredVest;
-import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.PhredWire;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -30,6 +31,9 @@ public class PhredItems {
 
     public static final Item PHRED_SIGN = registerItem("phred_sign", 
     new PhredSign(PhredToolMaterials.SIGN, 0, -3.2F, new Item.Settings()));
+
+       public static final Item PHRED_CONE = registerItem("phred_cone", 
+    new PhredCone(PhredToolMaterials.SIGN, 5, -3.2F, new Item.Settings()));
 
     public static final Item PHRED_HAT_UPGRADE = registerItem("googly_eyes", 
     new Item(new FabricItemSettings().maxCount(1)));
@@ -84,6 +88,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ELECTRICAL_BOARD);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_SPAWN_EGG);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ROBOT_FRAME);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE);
     }
 
     private static Item registerItem(String name, Item item) {
