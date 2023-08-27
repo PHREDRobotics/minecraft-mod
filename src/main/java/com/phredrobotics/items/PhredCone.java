@@ -1,17 +1,10 @@
 package com.phredrobotics.items;
 
-import com.phredrobotics.PhredBlocks;
-import com.phredrobotics.PhredSounds;
-
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -44,14 +37,14 @@ public class PhredCone extends SwordItem {
                 pos = pos.add(0, 0, 1);
             }
         }
-        blockstate = world.getBlockState(pos);
-        material = blockstate.getMaterial();
+        //blockstate = world.getBlockState(pos);
+       // material = blockstate.getMaterial();
         materialIsReplaceable = material.isReplaceable();
-        Block block = world.getBlockState(pos).getBlock();
+       // Block block = world.getBlockState(pos).getBlock();
         if (materialIsReplaceable) {
-            if (!world.isClient()) {
+         /*   if (!world.isClient()) {
                 // Update block + item
-                world.setBlockState(pos, PhredBlocks.PHRED_SIGN_BLOCK.getDefaultState()
+                world.setBlockState(pos, PhredBlocks.PHRED_CONE_BLOCK.getDefaultState()
                     .with(Properties.HORIZONTAL_FACING, context.getHorizontalPlayerFacing().getOpposite())
                     .with(Properties.WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER));
                 context.getPlayer().getStackInHand(context.getHand()).decrement(1);
@@ -61,9 +54,8 @@ public class PhredCone extends SwordItem {
                 // Play Sound
                 context.getPlayer().playSound(PhredSounds.SIGNEVENT, 1.0f, 1.0f);
             }
-
-            return super.useOnBlock(context);
+ */            return super.useOnBlock(context);
         }
         return ActionResult.PASS;
-    }
+    } 
 }
