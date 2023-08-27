@@ -42,19 +42,7 @@ public class PhredCone extends SwordItem {
         materialIsReplaceable = material.isReplaceable();
        // Block block = world.getBlockState(pos).getBlock();
         if (materialIsReplaceable) {
-         /*   if (!world.isClient()) {
-                // Update block + item
-                world.setBlockState(pos, PhredBlocks.PHRED_CONE_BLOCK.getDefaultState()
-                    .with(Properties.HORIZONTAL_FACING, context.getHorizontalPlayerFacing().getOpposite())
-                    .with(Properties.WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER));
-                context.getPlayer().getStackInHand(context.getHand()).decrement(1);
-                MinecraftClient.getInstance().player.swingHand(context.getHand());
-
-            } else {
-                // Play Sound
-                context.getPlayer().playSound(PhredSounds.SIGNEVENT, 1.0f, 1.0f);
-            }
- */            return super.useOnBlock(context);
+                return super.useOnBlock(context);
         }
         return ActionResult.PASS;
     } 
