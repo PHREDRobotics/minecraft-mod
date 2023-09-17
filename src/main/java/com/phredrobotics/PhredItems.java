@@ -9,6 +9,7 @@ import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredRobotFrame;
 import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredTshirt;
+import com.phredrobotics.items.PhredTshirtCannon;
 import com.phredrobotics.items.PhredVest;
 import com.phredrobotics.items.PhredWire;
 
@@ -69,6 +70,10 @@ public class PhredItems {
         public static final Item PHRED_ROBOT_FRAME = registerItem("phred_robot_frame", 
       new PhredRobotFrame(new FabricItemSettings()));
 
+           public static final Item PHRED_TSHIRT_CANNON = registerItem("phred_tshirt_cannon", 
+      new PhredTshirtCannon(new FabricItemSettings()));
+
+
     
     private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
@@ -77,6 +82,10 @@ public class PhredItems {
     
     private static void addToItemGroup(ItemGroup group, Item item){
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
+    }
+
+    private static Item registerItem(String name, PhredTshirtCannon phredTshirtCannon) {
+        return null;
     }
 
     public static void addItemsToItemGroup(){
@@ -94,6 +103,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ROBOT_FRAME);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT_CANNON);
     }
 
     private static Item registerItem(String name, Item item) {
