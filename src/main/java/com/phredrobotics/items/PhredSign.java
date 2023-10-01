@@ -1,69 +1,40 @@
 package com.phredrobotics.items;
 
-import com.phredrobotics.PhredBlocks;
-import com.phredrobotics.PhredSounds;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.attribute.EntityAttributeModifier.Operation;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemStack;
 
-public class PhredSign extends AxeItem {
-    public PhredSign(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
-        super(material, attackDamage, attackSpeed, settings);
+public class PhredSign extends BlockItem {
+     public static final float ATTACK_DAMAGE = 8.0F;
+     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
+    public PhredSign(Block block, Settings settings) {
+        super(block, settings);
+            ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
+            builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Tool modifier", 8.0, Operation.ADDITION));
+            builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Tool modifier", -3.0, Operation.ADDITION));
+            this.attributeModifiers = builder.build();
+         
+        //TODO Auto-generated constructor stub
     }
-    @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        World world = context.getWorld();
-        BlockPos pos = context.getBlockPos();
-        BlockState blockstate = world.getBlockState(pos);
-        Material material = blockstate.getMaterial();
-        boolean materialIsReplaceable = material.isReplaceable();
-        Direction side = context.getSide();
-        if (!materialIsReplaceable) {
-            if (side == Direction.UP){
-                pos = pos.add(0, 1, 0);
-            } else if (side == Direction.DOWN) {
-                pos = pos.add(0, -1, 0);                
-            } else if (side == Direction.WEST) {
-                pos = pos.add(-1, 0, 0);
-            } else if (side == Direction.EAST) {
-                pos = pos.add(1, 0, 0);
-            } else if (side == Direction.NORTH) {
-                pos = pos.add(0, 0, -1);
-            } else if (side == Direction.SOUTH) {
-                pos = pos.add(0, 0, 1);
-            }
-        }
-        blockstate = world.getBlockState(pos);
-        material = blockstate.getMaterial();
-        materialIsReplaceable = material.isReplaceable();
-        Block block = world.getBlockState(pos).getBlock();
-        if (materialIsReplaceable) {
-            if (!world.isClient()) {
-                // Update block + item
-                world.setBlockState(pos, PhredBlocks.PHRED_SIGN_BLOCK.getDefaultState()
-                    .with(Properties.HORIZONTAL_FACING, context.getHorizontalPlayerFacing().getOpposite())
-                    .with(Properties.WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER));
-                context.getPlayer().getStackInHand(context.getHand()).decrement(1);
-                MinecraftClient.getInstance().player.swingHand(context.getHand());
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+      stack.damage(1, attacker, (e) -> {
+         e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND);
+      });
+      return true;
+   }
+     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
+      return slot == EquipmentSlot.MAINHAND ? this.attributeModifiers : super.getAttributeModifiers(slot);
+   }
 
-            } else {
-                // Play Sound
-                context.getPlayer().playSound(PhredSounds.SIGNEVENT, 1.0f, 1.0f);
-            }
+   
 
-            return super.useOnBlock(context);
-        }
-        return ActionResult.PASS;
-    }
 }
