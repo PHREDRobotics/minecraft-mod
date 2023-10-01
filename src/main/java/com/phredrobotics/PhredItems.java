@@ -5,7 +5,6 @@ import com.phredrobotics.items.PhredElectricalBoard;
 import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredRobotFrame;
-import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredVest;
 import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.PhredWire;

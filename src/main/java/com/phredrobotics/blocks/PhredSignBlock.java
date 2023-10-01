@@ -2,15 +2,12 @@ package com.phredrobotics.blocks;
 
 import org.jetbrains.annotations.Nullable;
 
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSetType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.Waterloggable;
-import net.minecraft.block.enums.DoorHinge;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.fluid.FluidState;
@@ -18,7 +15,6 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.StateManager.Builder;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
@@ -26,13 +22,11 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.BlockMirror;
 import net.minecraft.util.BlockRotation;
-import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Direction.Axis;
 
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
@@ -48,13 +42,13 @@ public class PhredSignBlock extends HorizontalFacingBlock implements Waterloggab
       this.setDefaultState((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH))))).with(HALF, DoubleBlockHalf.LOWER));;
     }
 
-    private static final VoxelShape SHAPE_N = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
+    private static final VoxelShape SHAPE_N = Block.createCuboidShape(7, 0, 7, 9, 16, 9);
 
-    private static final VoxelShape SHAPE_E = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
+    private static final VoxelShape SHAPE_E = Block.createCuboidShape(7, 0, 7, 9, 16, 9);
 
-    private static final VoxelShape SHAPE_S = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
+    private static final VoxelShape SHAPE_S = Block.createCuboidShape(7, 0, 7, 9, 16, 9);
 
-    private static final VoxelShape SHAPE_W = Block.createCuboidShape(7, 0, 7, 9, 31, 9);
+    private static final VoxelShape SHAPE_W = Block.createCuboidShape(7, 0, 7, 9, 16, 9);
 
     static {
         HALF = Properties.DOUBLE_BLOCK_HALF;
@@ -119,6 +113,7 @@ public class PhredSignBlock extends HorizontalFacingBlock implements Waterloggab
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
       world.setBlockState(pos.up(), (BlockState)state.with(HALF, DoubleBlockHalf.UPPER), 3);
    }
+   
    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
     builder.add(new Property[]{HALF, FACING, WATERLOGGED});
  }

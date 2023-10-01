@@ -24,7 +24,8 @@ public class PhredBlocks {
 		Registry.register(Registries.BLOCK, new Identifier("phred", "mentor_jonathan_block"), MENTOR_JONATHAN_BLOCK);
         Registry.register(Registries.ITEM, new Identifier("phred", "mentor_jonathan_block"), new BlockItem(MENTOR_JONATHAN_BLOCK, new FabricItemSettings()));
         Registry.register(Registries.BLOCK, new Identifier("phred", "phred_sign"), PHRED_SIGN);
-        Registry.register(Registries.ITEM, new Identifier("phred", "phred_sign"), new PhredSign(PHRED_SIGN, new FabricItemSettings()));
+        Registry.register(Registries.ITEM, new Identifier("phred", "phred_sign"), new PhredSign(PHRED_SIGN, new FabricItemSettings().maxCount(1)));
+        addItemsToItemGroup();
     }
 
     public static void addItemsToItemGroup(){
