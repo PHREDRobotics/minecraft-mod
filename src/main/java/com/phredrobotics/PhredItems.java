@@ -1,12 +1,13 @@
 package com.phredrobotics;
 
+import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.PhredArmorItem;
+import com.phredrobotics.items.PhredCone;
 import com.phredrobotics.items.PhredElectricalBoard;
 import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredRobotFrame;
 import com.phredrobotics.items.PhredVest;
-import com.phredrobotics.entity.PhredEntity;
 import com.phredrobotics.items.PhredWire;
 import com.phredrobotics.items.PhredConeHat;
 
@@ -28,6 +29,9 @@ public class PhredItems {
     public static final Item PHRED_ITEM_5 = registerItem("phred_item_5", 
     new PhredItem5(new FabricItemSettings().maxCount(5)));
 
+       public static final Item PHRED_CONE = registerItem("phred_cone", 
+    new PhredCone(PhredToolMaterials.SIGN, 5, -3.2F, new Item.Settings()));
+  
     public static final Item PHRED_HAT_UPGRADE = registerItem("googly_eyes", 
     new Item(new FabricItemSettings().maxCount(1)));
 
@@ -86,6 +90,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_SPAWN_EGG);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_ITEM);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ROBOT_FRAME);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE);
     }
 
     private static Item registerItem(String name, Item item) {

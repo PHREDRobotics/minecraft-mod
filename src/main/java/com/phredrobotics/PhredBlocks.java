@@ -1,5 +1,7 @@
 package com.phredrobotics;
 
+
+import com.phredrobotics.blocks.PhredConeBlock;
 import com.phredrobotics.blocks.PhredSignBlock;
 import com.phredrobotics.items.PhredSign;
 
@@ -26,6 +28,7 @@ public class PhredBlocks {
         Registry.register(Registries.BLOCK, new Identifier("phred", "phred_sign"), PHRED_SIGN);
         Registry.register(Registries.ITEM, new Identifier("phred", "phred_sign"), new PhredSign(PHRED_SIGN, new FabricItemSettings().maxCount(1)));
         addItemsToItemGroup();
+
     }
 
     public static void addItemsToItemGroup(){
