@@ -9,7 +9,6 @@ jobs:
         with:
           name: Artifacts
           path: distfiles
-
       - name: copy file to server
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -19,3 +18,8 @@ jobs:
           port: ${{ secrets.PORT }}
           source: distfiles/*,server-scripts/*
           target: /tmp/minecraft
+      - name: publish build artifacts
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            files: distfiles/*.jar
