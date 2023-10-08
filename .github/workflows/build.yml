@@ -38,3 +38,14 @@ jobs:
         with:
           name: Artifacts
           path: build/libs/
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: Artifacts
+          path: distfiles
+      - uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          files: distfiles
