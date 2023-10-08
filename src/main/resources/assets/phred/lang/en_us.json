@@ -12,5 +12,6 @@
     "item.phred.phred_electrical_board": "Phred Electrical Board",
     "item.phred.phred_robot_frame": "Phred Robot Frame",
     "item.phred.phredbot_spawn_egg":"PhredBot Spawn Egg",
-    "item.phred.phredbot_item":"PhredBot"
+    "item.phred.phredbot_item":"PhredBot",
+    "entity.minecraft.villager.phred_member":"Phred Member"
 }
