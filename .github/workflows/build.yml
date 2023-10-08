@@ -15,8 +15,10 @@ jobs:
           17,    # Current Java LTS & minimum supported by Minecraft
         ]
         # and run on both Linux and Windows
-        os: [ubuntu-22.04, windows-2022]
+        os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
+    permissions:
+        contents: write
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
@@ -32,21 +34,8 @@ jobs:
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
-      - name: capture build artifacts
-        if: ${{ runner.os == 'Linux' && matrix.java == '17' }} # Only upload artifacts built from latest java on one OS
-        uses: actions/upload-artifact@v3
-        with:
-          name: Artifacts
-          path: build/libs/
-  publish:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: Artifacts
-          path: distfiles
-      - uses: Kir-Antipov/mc-publish@v3.3
+      - name: publish build artifacts
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          files: distfiles
+          files: build/libs/*.jar
