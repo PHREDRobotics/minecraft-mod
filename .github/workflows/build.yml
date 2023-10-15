@@ -40,3 +40,26 @@ jobs:
         with:
           name: Artifacts
           path: build/libs/
+  deploy:
+    runs-on: ubuntu-latest\
+    needs: build
+    if: github.event_name == 'push' && contains(github.event.ref, '/tags/')
+    steps:    
+      - uses: actions/download-artifact@v3
+        with:
+          name: Artifacts
+          path: distfiles
+      - name: copy file to server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          source: distfiles/*,server-scripts/*
+          target: /tmp/minecraft
+      - name: publish build artifacts
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            files: distfiles/*.jar
