@@ -1,6 +1,6 @@
 {
     "values": [
-        "PhredMod:vlc",
-        "PhredMod:pingu"
+        "phred:vlc",
+        "phred:pingu"
     ]
 }
