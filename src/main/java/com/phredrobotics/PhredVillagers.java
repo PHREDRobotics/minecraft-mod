@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -46,8 +47,13 @@ public class PhredVillagers {
         TradeOfferHelper.registerVillagerOffers(PHRED_MEMBER, 1,
         factories -> {
             factories.add(((entity, random) -> new TradeOffer(
-                new ItemStack(PhredItems.PHRED_ITEM_5, 3),
-                new ItemStack(PhredItems.PHRED_ITEM_5, 5),
+                new ItemStack(PhredItems.PHRED_ITEM_5, 1),
+                new ItemStack(Items.EMERALD, 1),
+                5, 2, 0.02f
+            )));
+            factories.add(((entity, random) -> new TradeOffer(
+                new ItemStack(Items.EMERALD, 3),
+                new ItemStack(PhredItems.PHRED_ROBOT_FRAME, 1),
                 6, 2, 0.02f
             )));
         });
