@@ -42,7 +42,7 @@ jobs:
           path: build/libs/
   deploy:
     runs-on: ubuntu-22.04
-    environment: production
+    environment: PHRED Minecraft Server
     needs: build
     if: github.event_name == 'push' && contains(github.event.ref, '/tags/')
     steps:    
