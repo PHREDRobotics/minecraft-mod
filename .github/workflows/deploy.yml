@@ -1,13 +1,9 @@
 name: deploy
 on:
-    push:
-      tags:
-        '*'
-    workflow_run:
-      workflows: [build]
-      types:
-        - completed
-
+  workflow_run:
+    workflows: [build]
+    types: [completed]
+    branches: [main,continuous-delivery]
 jobs:
   deploy:
     runs-on: ubuntu-latest
