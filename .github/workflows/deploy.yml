@@ -1,9 +1,9 @@
 name: deploy
 on:
   workflow_run:
-    workflows: [Build]
+    workflows: [build]
     types: [completed]
-    branches: [main,continuous-delivery]
+    branches: [main,continuous_delivery]
 jobs:
   deploy:
     runs-on: ubuntu-latest
