@@ -1,6 +1,9 @@
 package com.phredrobotics;
 
 import com.phredrobotics.blocks.AlBlock;
+import com.phredrobotics.blocks.RustBlock;
+import com.phredrobotics.blocks.gorbdec;
+import com.phredrobotics.blocks.roFurnace;
 import com.phredrobotics.items.MentorJonathanBlock;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -25,6 +28,12 @@ public class PhredBlocks {
     public static final Block STONE_ALORE = new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE));
 
     public static final Block DEEPSLATE_ALORE = new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE));
+    
+    public static final Block ROFURNACE_BLOCK = new roFurnace(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK));
+
+    public static final Block RUST_BLOCK = new RustBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL));
+
+    public static final Block GORBDEC = new gorbdec(FabricBlockSettings.copyOf(Blocks.BASALT));
 
     public static void register(){
         
@@ -43,6 +52,15 @@ public class PhredBlocks {
         Registry.register(Registries.BLOCK, new Identifier("phred", "deepslate_alore"), DEEPSLATE_ALORE);
         Registry.register(Registries.ITEM, new Identifier("phred", "deepslate_alore"), new BlockItem(DEEPSLATE_ALORE, new FabricItemSettings()));
         
+        Registry.register(Registries.BLOCK, new Identifier("phred", "robotics_furnace"), ROFURNACE_BLOCK);
+        Registry.register(Registries.ITEM, new Identifier("phred", "robotics_furnace"), new BlockItem(ROFURNACE_BLOCK, new FabricItemSettings()));
+       
+        Registry.register(Registries.BLOCK, new Identifier("phred", "rust_block"), RUST_BLOCK);
+        Registry.register(Registries.ITEM, new Identifier("phred", "rust_block"), new BlockItem(RUST_BLOCK, new FabricItemSettings()));
+
+        Registry.register(Registries.BLOCK, new Identifier("phred", "gorbdec"), GORBDEC);
+        Registry.register(Registries.ITEM, new Identifier("phred", "gorbdec"), new BlockItem(GORBDEC, new FabricItemSettings()));
+
         addItemsToItemGroup();
     }
         
@@ -56,5 +74,8 @@ public class PhredBlocks {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, STONE_ALORE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, DEEPSLATE_ALORE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, MENTOR_JONATHAN_BLOCK);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, ROFURNACE_BLOCK);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, RUST_BLOCK);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, GORBDEC);
     }
 }

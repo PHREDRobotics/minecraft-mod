@@ -12,5 +12,8 @@
     "block.phred.raw_alblock": "Block of Raw Aluminium",
     "block.phred.stone_alore": "Aluminium Ore",
     "block.phred.deepslate_alore": "Deepslate Aluminium Ore",
-    "block.phred.mentor_jonathan_block": "Best Block of the Century"
+    "block.phred.mentor_jonathan_block": "Best Block of the Century",
+    "block.phred.robotics_furnace": "Material Fuser",
+    "block.phred.gorbdec": "丑陋的小混蛋",
+    "block.phred.rustblock": "Rust"
 }
