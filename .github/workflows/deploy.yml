@@ -3,7 +3,6 @@ on:
   workflow_run:
     workflows: [Build]
     types: [completed]
-    branches: [main,continuous_delivery]
 jobs:
   deploy:
     runs-on: ubuntu-latest
