@@ -84,4 +84,4 @@ jobs:
           SSH_KEY: ${{ secrets.KEY }}
           SSH_HOST: ${{ secrets.HOST }}
       - name: trigger server deployment script
-        run: ssh phred 'chmod a+x /tmp/minecraft/server-files/minecraft-server-deploy.sh && /tmp/minecraft/server-files/minecraft-server-deploy.sh'
+        run: ssh phred 'chmod a+x /tmp/minecraft/server-files/minecraft-server-deploy.sh && sudo /tmp/minecraft/server-files/minecraft-server-deploy.sh'
