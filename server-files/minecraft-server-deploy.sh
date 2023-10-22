@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 MINECRAFT_PATH=/opt/minecraft
 SERVERNAME=phred
 SERVER_PATH=$MINECRAFT_PATH/$SERVERNAME
