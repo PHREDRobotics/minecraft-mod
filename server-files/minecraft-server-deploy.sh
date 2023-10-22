@@ -1,11 +1,11 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 MINECRAFT_PATH=/opt/minecraft
 SERVERNAME=phred
 SERVER_PATH=$MINECRAFT_PATH/$SERVERNAME
-TIMESTAMP="$(date +"%T")"
+TIMESTAMP="$(date +"%s")"
 TMP_PATH=/tmp/minecraft
 
 #Stop the server
