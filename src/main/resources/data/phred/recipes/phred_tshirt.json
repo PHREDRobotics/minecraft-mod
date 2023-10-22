@@ -3,7 +3,7 @@
     "pattern": [
       "A A",
       "AAA",
-      "AAA"
+      " A "
     ],
     "key": {
       "A": {
@@ -12,6 +12,6 @@
     },
     "result": {
       "item": "phred:phred_tshirt",
-      "count": 3
+      "count": 1
     }
   }

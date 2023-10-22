@@ -9,6 +9,7 @@ import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredRobotFrame;
 import com.phredrobotics.items.PhredSign;
 import com.phredrobotics.items.PhredTshirt;
+import com.phredrobotics.items.PhredTshirtBundle;
 import com.phredrobotics.items.PhredVest;
 import com.phredrobotics.items.PhredWire;
 
@@ -47,6 +48,9 @@ public class PhredItems {
 
         public static final Item PHRED_TSHIRT = registerItem("phred_tshirt",
     new PhredTshirt(PhredArmorMaterials.PHREDTSHIRT, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
+    
+      public static final Item PHRED_TSHIRT_BUNDLE = registerItem("phred_tshirt_bundle",
+      new PhredTshirtBundle(new FabricItemSettings()));
 
     public static final Item PHRED_HARD_HAT_UPGRADED = registerItem("phred_hard_hat_upgraded",
     new PhredHardHat(PhredArmorMaterials.PHREDHARDHATUPGRADED, ArmorItem.Type.HELMET, new Item.Settings()));
@@ -96,6 +100,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ROBOT_FRAME);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT_BUNDLE);
     }
 
     private static Item registerItem(String name, Item item) {

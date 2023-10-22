@@ -1,0 +1,54 @@
+package com.phredrobotics.entity;
+
+import com.phredrobotics.PhredArmorMaterials;
+import com.phredrobotics.items.PhredTshirt;
+
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.mob.BlazeEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.world.World;
+
+public class PhredTshirtBundle extends ThrownItemEntity {
+	public PhredTshirtBundle(EntityType<? extends ThrownItemEntity> entityType, World world) {
+		super(entityType, world);
+	}
+
+ 
+	public PhredTshirtBundle(World world, LivingEntity owner) {
+		super(null, owner, world); // null will be changed later
+	}
+ 
+	public PhredTshirtBundle(World world, double x, double y, double z) {
+		super(null, x, y, z, world); // null will be changed later
+	}
+ 
+	@Override
+	protected Item getDefaultItem() {
+		return null; // We will configure this later, once we have created the ProjectileItem.
+	}
+
+	@Override
+ 
+	protected void onEntityHit(EntityHitResult entityHitResult) { // called on entity hit.
+		super.onEntityHit(entityHitResult);
+		net.minecraft.entity.Entity entity = entityHitResult.getEntity(); // sets a new Entity instance as the EntityHitResult (victim)
+		int i = entity instanceof BlazeEntity ? 3 : 0; // sets i to 3 if the Entity instance is an instance of BlazeEntity
+
+ 
+		
+ 
+		if (entity instanceof PlayerEntity) { // checks if entity is an instance of LivingEntity (meaning it is not a boat or minecart)
+			entity.equipStack(EquipmentSlot.CHEST, new ItemStack(new PhredTshirt(PhredArmorMaterials.PHREDTSHIRT, ArmorItem.Type.CHESTPLATE, new Item.Settings())));
+	
+	}
+ 
+
+	}
+}

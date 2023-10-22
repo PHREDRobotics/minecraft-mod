@@ -1,0 +1,6 @@
+{
+    "parent": "item/throwable",
+    "textures": {
+      "layer0": "phred:item/phred_tshirt_bundle"
+    }
+  }

@@ -30,7 +30,7 @@ public class PhredTshirt extends ArmorItem{
     }
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
     (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-            .put(PhredArmorMaterials.PHRED,
+            .put(PhredArmorMaterials.PHREDTSHIRT,
                     new StatusEffectInstance(StatusEffects.GLOWING, 100, 0)).build();
 
 @Override
