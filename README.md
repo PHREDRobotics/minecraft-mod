@@ -21,14 +21,16 @@ The Minecraft server can be connected to on the standard port at mc-phred.4dloch
 ## Deployment
 To create a new release and automatically deploy it to the server, you will need to tag a new release on the main branch.
 Note: The current build.yml will only allow deployment from tags
-
-1) Go to https://github.com/PHREDRobotics/minecraft-mod/releases
-2) Click "Draft a new release"
-3) Under "Choose a tag" enter the name of the new release following the "{major}.{minor}.{build}" version pattern
-4) Click "Create new tag: {version} on publish"
-5) Verify the "Target" is set to "main"
-6) Enter a title and description of the release if so desired
-7) Click the green "Publish release" button
+1) Decide on a new version number following the "{major}.{minor}.{build}" version pattern
+2) Go to https://github.com/PHREDRobotics/minecraft-mod/blob/main/gradle.properties
+3) Edit the line for version with the new version number
+Go to https://github.com/PHREDRobotics/minecraft-mod/releases
+4) Click "Draft a new release"
+5) Under "Choose a tag" enter the new version number 
+6) Click "Create new tag: {version} on publish"
+7) Verify the "Target" is set to "main"
+8) Enter a title and description of the release if so desired
+9) Click the green "Publish release" button
 
 ## TODO List
 Attachable Googly Eyes
