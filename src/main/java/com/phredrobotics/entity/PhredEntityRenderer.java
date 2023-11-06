@@ -14,6 +14,7 @@ public class PhredEntityRenderer extends MobEntityRenderer<PhredEntity, PhredEnt
     public PhredEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new PhredEntityModel(context.getPart(EntityTestingClient.MODEL_CUBE_LAYER)), 0.5f);
     }
+    
  
     @Override
     public Identifier getTexture(PhredEntity entity) {

@@ -13,19 +13,20 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
-public class PhredTshirtBundle extends ThrownItemEntity {
-	public PhredTshirtBundle(EntityType<? extends ThrownItemEntity> entityType, World world) {
+public class PhredTshirtBundleEntity extends ThrownItemEntity {
+	public PhredTshirtBundleEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
 		super(entityType, world);
 	}
 
  
-	public PhredTshirtBundle(World world, LivingEntity owner) {
+	public PhredTshirtBundleEntity(World world, LivingEntity owner) {
 		super(null, owner, world); // null will be changed later
 	}
  
-	public PhredTshirtBundle(World world, double x, double y, double z) {
+	public PhredTshirtBundleEntity(World world, double x, double y, double z) {
 		super(null, x, y, z, world); // null will be changed later
 	}
  
@@ -46,9 +47,19 @@ public class PhredTshirtBundle extends ThrownItemEntity {
  
 		if (entity instanceof PlayerEntity) { // checks if entity is an instance of LivingEntity (meaning it is not a boat or minecart)
 			entity.equipStack(EquipmentSlot.CHEST, new ItemStack(new PhredTshirt(PhredArmorMaterials.PHREDTSHIRT, ArmorItem.Type.CHESTPLATE, new Item.Settings())));
-	
-	}
- 
+		}
+}
+
+	protected void onCollision(HitResult hitResult) { // called on collision with a block
+		super.onCollision(hitResult);
+		
+		if (!this.world.isClient) { // checks if the world is client
+			this.world.sendEntityStatus(this, (byte)3); // particle?
+			this.kill(); // kills the projectile
+		}
+
 
 	}
-}
+
+	}
+

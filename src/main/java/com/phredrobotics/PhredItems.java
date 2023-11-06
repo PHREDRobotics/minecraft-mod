@@ -1,6 +1,7 @@
 package com.phredrobotics;
 
 import com.phredrobotics.entity.PhredEntity;
+import com.phredrobotics.entity.PhredTshirtBundleEntity;
 import com.phredrobotics.items.PhredArmorItem;
 import com.phredrobotics.items.PhredCone;
 import com.phredrobotics.items.PhredElectricalBoard;
@@ -16,6 +17,10 @@ import com.phredrobotics.items.PhredWire;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -72,8 +77,6 @@ public class PhredItems {
 
         public static final Item PHRED_ROBOT_FRAME = registerItem("phred_robot_frame", 
       new PhredRobotFrame(new FabricItemSettings()));
-
-
     
     private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
@@ -83,6 +86,18 @@ public class PhredItems {
     private static void addToItemGroup(ItemGroup group, Item item){
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
+
+ 
+	public static final EntityType<PhredTshirtBundleEntity> PHRED_ENTITY_TYPE = Registry.register(
+			Registries.ENTITY_TYPE,
+			new Identifier("phred_tshirt_bundle"),
+			FabricEntityTypeBuilder.<PhredTshirtBundleEntity>create(SpawnGroup.MISC, PhredTshirtBundleEntity::new)
+					.dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
+					.trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
+					.build());
+
+
+
 
 
     public static void addItemsToItemGroup(){
