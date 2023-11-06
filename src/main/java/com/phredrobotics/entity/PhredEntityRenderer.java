@@ -1,6 +1,6 @@
 package com.phredrobotics.entity;
 
-import com.phredrobotics.EntityTestingClient;
+import com.phredrobotics.PhredClient;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier;
 public class PhredEntityRenderer extends MobEntityRenderer<PhredEntity, PhredEntityModel> {
  
     public PhredEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new PhredEntityModel(context.getPart(EntityTestingClient.MODEL_CUBE_LAYER)), 0.5f);
+        super(context, new PhredEntityModel(context.getPart(PhredClient.MODEL_CUBE_LAYER)), 0.5f);
     }
     
  

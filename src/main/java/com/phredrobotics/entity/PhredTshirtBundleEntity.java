@@ -1,6 +1,7 @@
 package com.phredrobotics.entity;
 
 import com.phredrobotics.PhredArmorMaterials;
+import com.phredrobotics.PhredItems;
 import com.phredrobotics.items.PhredTshirt;
 
 import net.minecraft.entity.EntityType;
@@ -23,16 +24,16 @@ public class PhredTshirtBundleEntity extends ThrownItemEntity {
 
  
 	public PhredTshirtBundleEntity(World world, LivingEntity owner) {
-		super(null, owner, world); // null will be changed later
+		super(PhredItems.PHRED_ENTITY_TYPE, owner, world);
 	}
  
 	public PhredTshirtBundleEntity(World world, double x, double y, double z) {
-		super(null, x, y, z, world); // null will be changed later
+		super(PhredItems.PHRED_ENTITY_TYPE, x, y, z, world);
 	}
  
 	@Override
 	protected Item getDefaultItem() {
-		return null; // We will configure this later, once we have created the ProjectileItem.
+		return PhredItems.PHRED_TSHIRT_BUNDLE;
 	}
 
 	@Override
