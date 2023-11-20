@@ -27,14 +27,14 @@ public class PhredClient implements ClientModInitializer {
         EntityRendererRegistry.register(PhredEntity.PHRED, (context) -> {
             return new PhredEntityRenderer(context);
         });
-        EntityRendererRegistry.register(PhredEntity.PHRED, (context) -> {
-            return new PhredEntityRenderer(context);
-        });
-
+        
         EntityRendererRegistry.register(PhredItems.PHRED_ENTITY_TYPE, (context)-> {
-            new FlyingItemEntityRenderer(context);
+            return new FlyingItemEntityRenderer(context);
         });
  
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, PhredEntityModel::getTexturedModelData);
     }
 }
+//when it hits someone do this 	dropItem(ItemStack stack, boolean throwRandomly, boolean retainOwnership) 
+// ItemStack is the chestplate their wearing throwRandomly is true and retain Ownership is false
+// 	getArmorItems()  looks important
