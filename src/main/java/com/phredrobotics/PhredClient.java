@@ -35,6 +35,4 @@ public class PhredClient implements ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, PhredEntityModel::getTexturedModelData);
     }
 }
-//when it hits someone do this 	dropItem(ItemStack stack, boolean throwRandomly, boolean retainOwnership) 
-// ItemStack is the chestplate their wearing throwRandomly is true and retain Ownership is false
-// 	getArmorItems()  looks important
+
