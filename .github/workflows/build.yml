@@ -14,9 +14,10 @@ jobs:
         java: [
           17,    # Current Java LTS & minimum supported by Minecraft
         ]
-        # and run on both Linux and Windows
-        os: [ubuntu-22.04, windows-2022]
+        os: [ubuntu-22.04]
     runs-on: ${{ matrix.os }}
+    permissions:
+        contents: write
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
@@ -38,3 +39,49 @@ jobs:
         with:
           name: Artifacts
           path: build/libs/
+  deploy:
+    runs-on: ubuntu-22.04
+    environment: PHRED Minecraft Server
+    needs: build
+    #Only deploy tagged versions
+    if: github.event_name == 'push' && contains(github.event.ref, '/tags/')
+    steps:    
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: download jar
+        uses: actions/download-artifact@v3
+        with:
+          name: Artifacts
+          path: distfiles
+      - name: copy file to server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          source: distfiles/*,server-files/*
+          target: /tmp/minecraft
+      - name: publish build artifacts
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            files: distfiles/*.jar
+      - name: setup ssh
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host phred
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.USERNAME }}
+          SSH_KEY: ${{ secrets.KEY }}
+          SSH_HOST: ${{ secrets.HOST }}
+      - name: trigger server deployment script
+        run: ssh phred 'chmod a+x /tmp/minecraft/server-files/minecraft-server-deploy.sh && sudo /tmp/minecraft/server-files/minecraft-server-deploy.sh'
