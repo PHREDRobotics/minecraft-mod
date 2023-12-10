@@ -6,6 +6,7 @@ import net.minecraft.recipe.Ingredient;
 
 
 public class PhredToolMaterials {
+
     public static final ToolMaterial CONE = new ToolMaterial(){
 @Override
 public int getDurability() {
@@ -59,4 +60,31 @@ public Ingredient getRepairIngredient() {
     }
     };
     
+
+        public static final ToolMaterial CANNON = new ToolMaterial(){
+@Override
+public int getDurability() {
+    return 1500;
+}
+@Override
+public float getMiningSpeedMultiplier() {
+    return 0.0F;
+}
+@Override
+public float getAttackDamage() {
+    return 0F;
+}
+@Override
+public int getMiningLevel() {
+    return 0;
+}
+@Override
+public int getEnchantability() {
+    return 30;
+}
+@Override
+public Ingredient getRepairIngredient() {
+    return Ingredient.ofItems(PhredItems.PHRED_ITEM_5);
+}
+    };
 }

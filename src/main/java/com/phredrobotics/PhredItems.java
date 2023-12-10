@@ -9,6 +9,7 @@ import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredRobotFrame;
 import com.phredrobotics.items.PhredSign;
+import com.phredrobotics.items.PhredTShirtCannon;
 import com.phredrobotics.items.PhredTshirt;
 import com.phredrobotics.items.PhredTshirtBundle;
 import com.phredrobotics.items.PhredVest;
@@ -40,7 +41,7 @@ public class PhredItems {
     new PhredSign(PhredToolMaterials.SIGN, 0, -3.2F, new Item.Settings()));
 
        public static final Item PHRED_CONE = registerItem("phred_cone", 
-    new PhredCone(PhredToolMaterials.SIGN, 5, -3.2F, new Item.Settings()));
+    new PhredCone(PhredToolMaterials.CONE, 5, -3.2F, new Item.Settings()));
 
     public static final Item PHRED_HAT_UPGRADE = registerItem("googly_eyes", 
     new Item(new FabricItemSettings().maxCount(1)));
@@ -78,6 +79,12 @@ public class PhredItems {
         public static final Item PHRED_ROBOT_FRAME = registerItem("phred_robot_frame", 
       new PhredRobotFrame(new FabricItemSettings()));
     
+
+       public static final Item PHRED_TSHIRT_CANNON = registerItem("phred_tshirt_cannon", 
+    new PhredTShirtCannon(PhredToolMaterials.CANNON, 0, 0.0F, new Item.Settings()));
+
+
+
     private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
     .displayName(Text.translatable("Phred"))
@@ -116,6 +123,7 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT_BUNDLE);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT_CANNON);
     }
 
     private static Item registerItem(String name, Item item) {
