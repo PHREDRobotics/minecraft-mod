@@ -1,8 +1,6 @@
 package com.phredrobotics.entity;
 
-import com.phredrobotics.PhredArmorMaterials;
 import com.phredrobotics.PhredItems;
-import com.phredrobotics.items.PhredTshirt;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -10,7 +8,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.EntityHitResult;
@@ -47,7 +44,7 @@ public class PhredTshirtBundleEntity extends ThrownItemEntity {
 		
  
 		if (entity instanceof PlayerEntity) { // checks if entity is an instance of LivingEntity (meaning it is not a boat or minecart)
-			entity.equipStack(EquipmentSlot.CHEST, new ItemStack(new PhredTshirt(PhredArmorMaterials.PHREDTSHIRT, ArmorItem.Type.CHESTPLATE, new Item.Settings())));
+			entity.equipStack(EquipmentSlot.CHEST, new ItemStack(PhredItems.PHRED_TSHIRT));
 		}
 }
 
