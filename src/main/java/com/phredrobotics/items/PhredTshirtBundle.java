@@ -25,14 +25,14 @@ public class PhredTshirtBundle extends Item {
 		Optionally, you can add a cooldown to your item's right-click use, similar to Ender Pearls.
 		*/
 		if (!world.isClient) {
-			PhredTshirtBundleEntity snowballEntity = new PhredTshirtBundleEntity(world, user);
-			snowballEntity.setItem(itemStack);
-			snowballEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0F);
+			PhredTshirtBundleEntity phredTshirtBundleEntity = new PhredTshirtBundleEntity(world, user);
+			phredTshirtBundleEntity.setItem(itemStack);
+			phredTshirtBundleEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 0F);
                         /*
-                        snowballEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
+                        phredTshirtBundleEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
                         In 1.17,we will use setProperties instead of setVelocity.
                         */
-			world.spawnEntity(snowballEntity); // spawns entity
+			world.spawnEntity(phredTshirtBundleEntity); // spawns entity
 		}
  
 		user.incrementStat(Stats.USED.getOrCreateStat(this));

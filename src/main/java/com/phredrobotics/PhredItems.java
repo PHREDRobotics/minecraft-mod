@@ -95,7 +95,7 @@ public class PhredItems {
     }
 
  
-	public static final EntityType<PhredTshirtBundleEntity> PHRED_ENTITY_TYPE = Registry.register(
+	public static final EntityType<PhredTshirtBundleEntity> PHRED_TSHIRT_BUNDLE_ENTITY_TYPE = Registry.register(
 			Registries.ENTITY_TYPE,
 			new Identifier("phred_tshirt_bundle"),
 			FabricEntityTypeBuilder.<PhredTshirtBundleEntity>create(SpawnGroup.MISC, PhredTshirtBundleEntity::new)

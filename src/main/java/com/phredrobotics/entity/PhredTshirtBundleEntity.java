@@ -21,11 +21,11 @@ public class PhredTshirtBundleEntity extends ThrownItemEntity {
 
  
 	public PhredTshirtBundleEntity(World world, LivingEntity owner) {
-		super(PhredItems.PHRED_ENTITY_TYPE, owner, world);
+		super(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, owner, world);
 	}
  
 	public PhredTshirtBundleEntity(World world, double x, double y, double z) {
-		super(PhredItems.PHRED_ENTITY_TYPE, x, y, z, world);
+		super(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, x, y, z, world);
 	}
  
 	@Override

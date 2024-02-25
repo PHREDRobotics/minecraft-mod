@@ -28,7 +28,7 @@ public class PhredClient implements ClientModInitializer {
             return new PhredEntityRenderer(context);
         });
         
-        EntityRendererRegistry.register(PhredItems.PHRED_ENTITY_TYPE, (context)-> {
+        EntityRendererRegistry.register(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, (context)-> {
             return new FlyingItemEntityRenderer(context);
         });
  
