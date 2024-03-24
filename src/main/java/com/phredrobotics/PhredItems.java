@@ -87,7 +87,7 @@ public class PhredItems {
 
 
 
-    private static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
+    public static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
     .displayName(Text.translatable("Phred"))
     .build();

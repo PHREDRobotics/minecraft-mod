@@ -1,7 +1,7 @@
 package com.phredrobotics;
 
 
-import com.phredrobotics.blocks.PhredConeBlock;
+
 import com.phredrobotics.blocks.PhredSignBlock;
 import com.phredrobotics.items.PhredSign;
 
