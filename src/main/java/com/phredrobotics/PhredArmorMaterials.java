@@ -20,7 +20,7 @@ public enum PhredArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.BOOTS, 0);
         map.put(ArmorItem.Type.LEGGINGS, 0);
         map.put(ArmorItem.Type.CHESTPLATE, 5);
-        map.put(ArmorItem.Type.HELMET, 0);
+        map.put(ArmorItem.Type.HELMET, 5);
     }), 19, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.0F, 0.0F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{PhredItems.PHRED_ITEM_5});
     }),

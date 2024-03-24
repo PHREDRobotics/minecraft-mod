@@ -1,11 +1,12 @@
 {
     "item.phred.phred_item_5": "Phred Item 5",
-    "item.phred.phred_sign": "Phred Sign",
+    "block.phred.phred_sign": "Phred Sign",
     "item.phred.phred_hard_hat": "Phred Hard Hat™",
     "item.phred.phred_hard_hat_upgraded": "Phred Hard Hat™",
     "item.phred.phred_vest": "Phred Vest™",
     "item.phred.phred_leggings": "Phred Leggings WIP",
     "item.phred.phred_boots": "Phred Boots WIP",
+    "item.phred.phred_cone_hat": "Phred Cone Hat",
     "item.phred.googly_eyes": "Googly Eyes",
     "item.phred.phred_wire": "Phred Wire",
     "item.phred.phred_electrical_board": "Phred Electrical Board",
@@ -14,5 +15,6 @@
     "item.phred.phred_tshirt": "Phred T-Shirt",
     "item.phred.phred_cone": "Phred Cone",
     "item.phred.phred_tshirt_bundle": "Phred T-shirt Bundle",
-    "item.phred.phred_tshirt_cannon": "Phred T-shirt Cannon"
+    "item.phred.phred_tshirt_cannon": "Phred T-shirt Cannon",
+    "item.phred.phredbot_item":"PhredBot"
 }
