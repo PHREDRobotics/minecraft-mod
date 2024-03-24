@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "CAC",
+      "CBC",
+      "DDD"
+    ],
+    "key": {
+      "A": {
+        "item": "phred:phredbot_spawn_egg"
+      },
+      "B": {
+        "item": "minecraft:crossbow"
+      },
+      "C":{
+        "item": "minecraft:yellow_dye"
+      },
+      "D": {
+        "item": "minecraft:netherite_ingot"
+      }
+    },
+    "result": {
+      "item": "phred:phred_tshirt_cannon",
+      "count": 1
+    }
+  }

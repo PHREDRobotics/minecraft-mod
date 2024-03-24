@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "A A",
+      "AAA",
+      " A "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:yellow_wool"
+      }
+    },
+    "result": {
+      "item": "phred:phred_tshirt",
+      "count": 1
+    }
+  }

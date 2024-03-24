@@ -1,12 +1,17 @@
 package com.phredrobotics;
 
 import com.phredrobotics.entity.PhredEntity;
+import com.phredrobotics.entity.PhredTshirtBundleEntity;
 import com.phredrobotics.items.PhredArmorItem;
 import com.phredrobotics.items.PhredCone;
 import com.phredrobotics.items.PhredElectricalBoard;
 import com.phredrobotics.items.PhredHardHat;
 import com.phredrobotics.items.PhredItem5;
 import com.phredrobotics.items.PhredRobotFrame;
+import com.phredrobotics.items.PhredSign;
+import com.phredrobotics.items.PhredTShirtCannon;
+import com.phredrobotics.items.PhredTshirt;
+import com.phredrobotics.items.PhredTshirtBundle;
 import com.phredrobotics.items.PhredVest;
 import com.phredrobotics.items.PhredWire;
 import com.phredrobotics.items.PhredConeHat;
@@ -14,6 +19,10 @@ import com.phredrobotics.items.PhredConeHat;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -30,8 +39,8 @@ public class PhredItems {
     new PhredItem5(new FabricItemSettings().maxCount(5)));
 
        public static final Item PHRED_CONE = registerItem("phred_cone", 
-    new PhredCone(PhredToolMaterials.SIGN, 5, -3.2F, new Item.Settings()));
-  
+    new PhredCone(PhredToolMaterials.CONE, 5, -3.2F, new Item.Settings()));
+
     public static final Item PHRED_HAT_UPGRADE = registerItem("googly_eyes", 
     new Item(new FabricItemSettings().maxCount(1)));
 
@@ -42,6 +51,12 @@ public class PhredItems {
 ;
     public static final Item PHRED_HARD_HAT = registerItem("phred_hard_hat",
     new PhredHardHat(PhredArmorMaterials.PHREDHARDHAT, ArmorItem.Type.HELMET, new Item.Settings()));
+
+        public static final Item PHRED_TSHIRT = registerItem("phred_tshirt",
+    new PhredTshirt(PhredArmorMaterials.PHREDTSHIRT, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
+    
+      public static final Item PHRED_TSHIRT_BUNDLE = registerItem("phred_tshirt_bundle",
+      new PhredTshirtBundle(new FabricItemSettings()));
 
     public static final Item PHRED_HARD_HAT_UPGRADED = registerItem("phred_hard_hat_upgraded",
     new PhredHardHat(PhredArmorMaterials.PHREDHARDHATUPGRADED, ArmorItem.Type.HELMET, new Item.Settings()));
@@ -65,9 +80,14 @@ public class PhredItems {
 
         public static final Item PHRED_ROBOT_FRAME = registerItem("phred_robot_frame", 
       new PhredRobotFrame(new FabricItemSettings()));
-
     
-    static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
+
+       public static final Item PHRED_TSHIRT_CANNON = registerItem("phred_tshirt_cannon", 
+    new PhredTShirtCannon(PhredToolMaterials.CANNON, 0, 0.0F, new Item.Settings()));
+
+
+
+    public static final ItemGroup PHRED_ITEM_GROUP = FabricItemGroup.builder(new Identifier("phred", "phred"))
     .icon(() -> new ItemStack(PHRED_ITEM_5))
     .displayName(Text.translatable("Phred"))
     .build();
@@ -75,6 +95,19 @@ public class PhredItems {
     private static void addToItemGroup(ItemGroup group, Item item){
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
+
+ 
+	public static final EntityType<PhredTshirtBundleEntity> PHRED_TSHIRT_BUNDLE_ENTITY_TYPE = Registry.register(
+			Registries.ENTITY_TYPE,
+			new Identifier("phred_tshirt_bundle"),
+			FabricEntityTypeBuilder.<PhredTshirtBundleEntity>create(SpawnGroup.MISC, PhredTshirtBundleEntity::new)
+					.dimensions(EntityDimensions.fixed(0.25F, 0.25F)) // dimensions in Minecraft units of the projectile
+					.trackRangeBlocks(4).trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
+					.build());
+
+
+
+
 
     public static void addItemsToItemGroup(){
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_HARD_HAT);
@@ -91,6 +124,9 @@ public class PhredItems {
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHREDBOT_ITEM);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_ROBOT_FRAME);
         addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_CONE);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT_BUNDLE);
+        addToItemGroup(PhredItems.PHRED_ITEM_GROUP, PHRED_TSHIRT_CANNON);
     }
 
     private static Item registerItem(String name, Item item) {

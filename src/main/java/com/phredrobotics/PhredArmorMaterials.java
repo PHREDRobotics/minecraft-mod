@@ -4,7 +4,10 @@ package com.phredrobotics;
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
-import net.minecraft.item.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.ArmorMaterials;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -35,6 +38,14 @@ public enum PhredArmorMaterials implements ArmorMaterial {
         map.put(ArmorItem.Type.CHESTPLATE, 0);
         map.put(ArmorItem.Type.HELMET, 12);
     }), 30, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 10.0F, 0.2F, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{PhredItems.PHRED_ITEM_5});
+    }), 
+    PHREDTSHIRT("phredtshirt", 1, Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+        map.put(ArmorItem.Type.BOOTS, 0);
+        map.put(ArmorItem.Type.LEGGINGS, 0);
+        map.put(ArmorItem.Type.CHESTPLATE, 1);
+        map.put(ArmorItem.Type.HELMET, 0);
+    }), 0, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 0.0F, 0.F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{PhredItems.PHRED_ITEM_5});
     });
 

@@ -22,7 +22,7 @@
       "com.phredrobotics.PhredMod"
     ],
     "client": [
-      "com.phredrobotics.EntityTestingClient"
+      "com.phredrobotics.PhredClient"
     ]
   },
   "mixins": [

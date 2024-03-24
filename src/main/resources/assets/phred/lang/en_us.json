@@ -12,5 +12,9 @@
     "item.phred.phred_electrical_board": "Phred Electrical Board",
     "item.phred.phred_robot_frame": "Phred Robot Frame",
     "item.phred.phredbot_spawn_egg":"PhredBot Spawn Egg",
+    "item.phred.phred_tshirt": "Phred T-Shirt",
+    "item.phred.phred_cone": "Phred Cone",
+    "item.phred.phred_tshirt_bundle": "Phred T-shirt Bundle",
+    "item.phred.phred_tshirt_cannon": "Phred T-shirt Cannon",
     "item.phred.phredbot_item":"PhredBot"
 }
