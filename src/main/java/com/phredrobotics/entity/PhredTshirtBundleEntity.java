@@ -7,6 +7,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,24 +15,24 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
-public class PhredTshirtBundleEntity extends ThrownItemEntity {
-	public PhredTshirtBundleEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
+public class PhredTshirtBundleEntity extends ArrowEntity {
+	public PhredTshirtBundleEntity(EntityType<? extends ArrowEntity> entityType, World world) {
 		super(entityType, world);
 	}
 
  
 	public PhredTshirtBundleEntity(World world, LivingEntity owner) {
-		super(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, owner, world);
+		super(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, world);
 	}
  
 	public PhredTshirtBundleEntity(World world, double x, double y, double z) {
-		super(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, x, y, z, world);
+		super(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, world);
 	}
- 
-	@Override
+ //It is not buiding correctly and is using older code
+ 	/*@Override
 	protected Item getDefaultItem() {
 		return PhredItems.PHRED_TSHIRT_BUNDLE;
-	}
+		}*/
 
 	@Override
  
