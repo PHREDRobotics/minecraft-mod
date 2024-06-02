@@ -9,7 +9,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
+import net.minecraft.client.render.entity.ArrowEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 
@@ -29,7 +29,7 @@ public class PhredClient implements ClientModInitializer {
         });
         
         EntityRendererRegistry.register(PhredItems.PHRED_TSHIRT_BUNDLE_ENTITY_TYPE, (context)-> {
-            return new FlyingItemEntityRenderer(context);
+            return new ArrowEntityRenderer(context);
         });
  
         EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, PhredEntityModel::getTexturedModelData);

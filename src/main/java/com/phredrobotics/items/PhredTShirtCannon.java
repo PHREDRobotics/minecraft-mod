@@ -1,6 +1,5 @@
 package com.phredrobotics.items;
 
-import net.minecraft.item.ArrowItem;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ToolMaterial;
 

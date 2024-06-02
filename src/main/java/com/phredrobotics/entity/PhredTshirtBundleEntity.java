@@ -5,11 +5,8 @@ import com.phredrobotics.PhredItems;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
@@ -39,11 +36,6 @@ public class PhredTshirtBundleEntity extends ArrowEntity {
 	protected void onEntityHit(EntityHitResult entityHitResult) { // called on entity hit.
 		super.onEntityHit(entityHitResult);
 		net.minecraft.entity.Entity entity = entityHitResult.getEntity(); // sets a new Entity instance as the EntityHitResult (victim)
-		int i = entity instanceof BlazeEntity ? 3 : 0; // sets i to 3 if the Entity instance is an instance of BlazeEntity
-
- 
-		
- 
 		if (entity instanceof PlayerEntity) { // checks if entity is an instance of LivingEntity (meaning it is not a boat or minecart)
 			entity.equipStack(EquipmentSlot.CHEST, new ItemStack(PhredItems.PHRED_TSHIRT));
 		}

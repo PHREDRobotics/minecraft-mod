@@ -1,7 +1,5 @@
 package com.phredrobotics.entity;
 
-import com.google.common.collect.ImmutableList;
-
 import net.minecraft.client.model.Dilation;
 import net.minecraft.client.model.ModelData;
 import net.minecraft.client.model.ModelPart;
@@ -11,7 +9,6 @@ import net.minecraft.client.model.ModelTransform;
 import net.minecraft.client.model.TexturedModelData;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
-import net.minecraft.client.render.entity.model.EntityModelPartNames;
 import net.minecraft.client.util.math.MatrixStack;
 
 public class PhredEntityModel extends EntityModel<PhredEntity> {
@@ -27,7 +24,7 @@ public class PhredEntityModel extends EntityModel<PhredEntity> {
     public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData bb_main = modelPartData.addChild("bb_main", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -8.0F, -8.0F, 8.0F, 8.0F, 16.0F, new Dilation(0.0F))
+		modelPartData.addChild("bb_main", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -8.0F, -8.0F, 8.0F, 8.0F, 16.0F, new Dilation(0.0F))
 		.uv(32, 32).cuboid(4.0F, -4.0F, -8.0F, 4.0F, 4.0F, 4.0F, new Dilation(0.0F))
 		.uv(32, 0).cuboid(-4.0F, -16.0F, -8.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.0F))
 		.uv(0, 24).cuboid(-4.0F, -24.0F, 0.0F, 8.0F, 16.0F, 8.0F, new Dilation(0.0F))
