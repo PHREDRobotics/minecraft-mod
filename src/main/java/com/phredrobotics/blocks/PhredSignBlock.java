@@ -84,7 +84,7 @@ public class PhredSignBlock extends HorizontalFacingBlock implements Waterloggab
 
         @Override
     public FluidState getFluidState(BlockState state) {
-        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : state.getFluidState();
     }
     
     @Override
@@ -102,7 +102,7 @@ public class PhredSignBlock extends HorizontalFacingBlock implements Waterloggab
       if (direction.getAxis() == Axis.Y && doubleBlockHalf == DoubleBlockHalf.LOWER == (direction == Direction.UP)) {
          return neighborState.isOf(this) && neighborState.get(HALF) != doubleBlockHalf ? (BlockState)((BlockState)((BlockState)((BlockState)state.with(FACING, (Direction)neighborState.get(FACING))))) : Blocks.AIR.getDefaultState();
       } else {
-         return doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+         return doubleBlockHalf == DoubleBlockHalf.LOWER && direction == Direction.DOWN && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : state.getStateForNeighborUpdate(direction, neighborState, world, pos, neighborPos);
       }
    }
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {

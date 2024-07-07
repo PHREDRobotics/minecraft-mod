@@ -23,7 +23,6 @@ public class PhredSign extends BlockItem {
             builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Tool modifier", -3.0, Operation.ADDITION));
             this.attributeModifiers = builder.build();
          
-        //TODO Auto-generated constructor stub
     }
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
       stack.damage(1, attacker, (e) -> {
